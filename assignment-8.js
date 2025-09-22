@@ -1,12 +1,5 @@
  function groupByCategory(items){
 
- }
-const items = [
-  { name: "apple", category: "fruit" },
-  { name: "carrot", category: "vegetable" },
-  { name: "banana", category: "fruit" }
-];
-
 const grouped = items.reduce((acc, item) => {
   
   if (!acc[item.category]) {
@@ -18,3 +11,11 @@ const grouped = items.reduce((acc, item) => {
 }, {});
 
 console.log(grouped);
+ }
+const items = [
+  { name: "apple", category: "fruit" },
+  { name: "carrot", category: "vegetable" },
+  { name: "banana", category: "fruit" }
+];
+
+groupByCategory(items);
