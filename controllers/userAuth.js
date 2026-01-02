@@ -1,7 +1,7 @@
 const User = require('../models/userModel');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const catchAsync = require('../utils/catchAsync');
+const catchAsync = require('../utils/catchAsync')
 
 exports.register = catchAsync(async (req, res, next) => {
 
