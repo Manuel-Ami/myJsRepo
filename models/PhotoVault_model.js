@@ -6,6 +6,10 @@ const PhotoVaultSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
+    title: {
+        type: String,
+        required: true
+    },
     photoUrl: {
         type: String,   
         required: true
