@@ -6,7 +6,7 @@ const catchAsync = require('../utils/catchAsync')
 exports.register = catchAsync(async (req, res, next) => {
 
     const newUser = await User.create(req.body)
-    token = jwt.sign( { id: newUser._id, role: newUser.role }, process.env.SECRET_STR, {
+    token = jwt.sign( { userId: newUser._id, role: newUser.role }, process.env.SECRET_STR, {
         expiresIn: process.env.LOGIN_EXPIRES
     })
 
@@ -30,7 +30,7 @@ exports.login = catchAsync(async (req, res, next) => {
         });
     }
     
-    token = jwt.sign( { id: user._id, role: user.role }, process.env.SECRET_STR, {
+    token = jwt.sign( { userId: user._id, role: user.role }, process.env.SECRET_STR, {
         expiresIn: process.env.LOGIN_EXPIRES
     });
     user.password = undefined;
