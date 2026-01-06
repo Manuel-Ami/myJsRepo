@@ -10,6 +10,11 @@ const PhotoVaultSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    albumId:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Album',
+        nullable: true
+    },
     photoUrl: {
         type: String,   
         required: true
@@ -17,6 +22,11 @@ const PhotoVaultSchema = new mongoose.Schema({
     description: {
         type: String,
         default: 'A photo in the vault',
+    },
+    visibility: {
+        type: String,
+        enum: ['public', 'private'],
+        default: 'private'
     },
     uploadedAt: {
         type: Date,
