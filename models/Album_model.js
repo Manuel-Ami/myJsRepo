@@ -6,18 +6,9 @@ const albumSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
-    name: {
+    title: {
         type: String,
         required: true
-    },
-    description: {
-        type: String,
-        default: 'No description provided'  
-    },
-    visibility: {
-        type: String,
-        enum: ['public', 'private'],
-        default: 'private'
     }
 }); 
 
