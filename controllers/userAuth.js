@@ -41,6 +41,6 @@ exports.login = catchAsync(async (req, res, next) => {
         token,
         data:{user}
     })
-})
+});
 
 
