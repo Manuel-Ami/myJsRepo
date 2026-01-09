@@ -27,7 +27,7 @@ exports.login = catchAsync(async (req, res, next) => {
         return res.status(401).json({
             status: 'fail',
             message: 'Incorrect email or password'
-        });
+        })
     }
     
     token = jwt.sign( { userId: user._id, role: user.role }, process.env.SECRET_STR, {
@@ -41,6 +41,6 @@ exports.login = catchAsync(async (req, res, next) => {
         token,
         data:{user}
     })
-});
+})
 
 
