@@ -15,6 +15,6 @@ router.route('/createAlbum').post(limiter, albumController.createAlbum);
 
 router.route('/getAlbums').get(limiter, auth, albumController.getAlbums);
 
-er
+
 
 module.exports = router;
